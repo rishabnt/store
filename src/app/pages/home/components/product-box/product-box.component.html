@@ -1,5 +1,5 @@
 <mat-card 
-    class="p-2 h-[{{rowHeight}}px]" 
+    class="p-2 m-0 h-[{{rowHeight}}px]" 
     [ngClass]="{'text-center': !fullWidthMode}"
 >
     <div 
@@ -17,16 +17,16 @@
                 alt="Product image"
             />
         </div>
-        <div class="" [ngClass]="{'px-8 h-full flex flex-col justify-between': fullWidthMode}">
-            <div>
+        <div class="" [ngClass]="{'px-3 h-full flex flex-col justify-between items-stretch': fullWidthMode}">
+            <div class="h-[85%]">
                 <h5>{{ product ? product.category[0].toUpperCase() + product.category.slice(1) : ''}}</h5>
-                <p class="h-10 truncate hover:whitespace-normal">{{product?.title}}</p>
-                <p *ngIf="fullWidthMode" class="h-10">{{ product?.description }}</p>
+                <p class="truncate hover:whitespace-normal">{{product?.title}}</p>
+                <p *ngIf="fullWidthMode" class="">{{ product?.description }}</p>
             </div>
-            <div class="flex justify-between m-1">
-                <span class="text-red-400">{{ product?.price | currency }}</span>
-                <button (click)="onAddToCart()">
-                    <mat-icon class="text-gray-500">shopping_cart</mat-icon>
+            <div class="flex justify-between items-center m-1 h-[15%]">
+                <span class="font-bold">{{ product?.price | currency }}</span>
+                <button tooltip="Add to cart" (click)="onAddToCart()">
+                    <mat-icon class="">add</mat-icon>
                 </button>
             </div>
         </div>

@@ -6,7 +6,7 @@ import { CartService } from './services/cart.service';
   selector: 'app-root',
   template: `
     <app-header [cart] = "cart"></app-header>
-    <router-outlet></router-outlet>
+    <div class="h-full"><router-outlet></router-outlet></div>
   `,
   styles: []
 })
