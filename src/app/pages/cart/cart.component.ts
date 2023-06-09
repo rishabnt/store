@@ -4,6 +4,7 @@ import { loadStripe } from '@stripe/stripe-js';
 import { Subscription } from 'rxjs';
 import { Cart, CartItem } from 'src/app/models/cart.model';
 import { CartService } from 'src/app/services/cart.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-cart',
@@ -49,7 +50,7 @@ export class CartComponent implements OnInit, OnDestroy{
 
   onCheckout(): void {
     this.http
-      .post('http://localhost:4242/checkout', {
+      .post(environment.apiURL + '/checkout', {
         items: this.cart.items,
       })
       .subscribe( async (res: any) => {
