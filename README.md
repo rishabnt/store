@@ -1,3 +1,7 @@
+# Server side code
+
+This repository contains the front-end code only, please go to https://github.com/rishabnt/store-server for server-side code.
+
 # Store
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.3.
